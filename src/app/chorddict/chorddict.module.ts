@@ -17,4 +17,4 @@ import { ChorddictPage } from './chorddict.page';
   ],
   declarations: [ChorddictPage]
 })
-export class ChorddictPageModule {}
+export class ChorddictPageModule { }
