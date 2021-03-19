@@ -1,3 +1,4 @@
+import { findLast } from '@angular/compiler/src/directive_resolver';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,112 +8,179 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChorddictPage implements OnInit {
 
+  // Array with all the notes
   notes = [
     {
       name: 'C',
-      value: 1
+      value: 1,
+      isRoot: true,
     },
     {
       name: 'C#',
-      value: 3
+      value: 3,
+      isRoot: true,
     },
     {
       name: 'Db',
-      value: 4
+      value: 4,
+      isRoot: true,
     },
     {
       name: 'D',
-      value: 6
+      value: 6,
+      isRoot: true,
     },
     {
       name: 'D#',
-      value: 8
+      value: 8,
+      isRoot: true,
     },
     {
       name: 'Eb',
-      value: 9
+      value: 9,
+      isRoot: true,
     },
     {
       name: 'E',
-      value: 11
+      value: 11,
+      isRoot: true,
     },
     {
       name: 'Fb',
-      value: 12
+      value: 12,
+      isRoot: false,
     },
     {
       name: 'E#',
-      value: 13
+      value: 13,
+      isRoot: false,
     },
     {
       name: 'F',
-      value: 14
+      value: 14,
+      isRoot: true,
     },
     {
       name: 'F#',
-      value: 16
+      value: 16,
+      isRoot: true,
     },
     {
       name: 'Gb',
-      value: 17
+      value: 17,
+      isRoot: true,
     },
     {
       name: 'G',
-      value: 19
+      value: 19,
+      isRoot: true,
     },
     {
       name: 'G#',
-      value: 21
+      value: 21,
+      isRoot: true,
     },
     {
       name: 'Ab',
-      value: 22
+      value: 22,
+      isRoot: true,
     },
     {
       name: 'A',
-      value: 24
+      value: 24,
+      isRoot: true,
     },
     {
       name: 'A#',
-      value: 26
+      value: 26,
+      isRoot: true,
     },
     {
       name: 'Bb',
-      value: 27
+      value: 27,
+      isRoot: true,
     },
     {
       name: 'B',
-      value: 29
+      value: 29,
+      isRoot: true,
     },
     {
       name: 'Cb',
-      value: 30
+      value: 30,
+      isRoot: false,
     },
     {
       name: 'B#',
-      value: 31
+      value: 31,
+      isRoot: false,
     },
   ];
 
-  roots = ['C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'F', 'F#', 'Gb', 'G', 'G#', 'Ab', 'A', 'A#', 'Bb', 'B'];
-
-  types = [
-    '(majeur)', 'm', 'dim', 'aug'
+  chordTypes = [
+    {
+      name: '(majeur)',
+      intervals: [10, 18]
+    },
+    {
+      name: 'm',
+      intervals: [8, 18]
+    },
+    {
+      name: 'dim',
+      intervals: [8, 16]
+    },
+    {
+      name: 'aug',
+      intervals: [10, 20]
+    },
   ];
 
+  // Array with the notes that can be chord roots
+  roots = [];
+  chordNames = [];
+
+  // Array containing the notes of the selected chord
   chordNotes = [];
+
+  selectedRootName: string;
+  selectedTypeName: string;
 
   constructor() { }
 
-  selectedRoot = this.roots[0];
-  selectedType = this.types[0];
-
   ngOnInit() {
-    
+    this.notes.forEach((note) => {
+      if(note.isRoot) {
+        this.roots.push(note.name);
+      }
+    });
+
+    this.chordTypes.forEach((chordType) => {
+      this.chordNames.push(chordType.name);
+    });
+
+    this.selectedRootName = this.roots[0];
+    this.selectedTypeName = this.chordNames[0];
   }
 
-  rootChanged(){
-    alert(JSON.stringify(this.notes.find((note) => note.name === this.selectedRoot)));
+  rootOrTypeChanged(){
+    // Initializing the chord notes array
+    this.chordNotes = [];
+
+    // Selecting the root of the chord
+    const selectedRoot = this.notes.find((note) => note.name === this.selectedRootName);
+    // Selecting the type of the chord
+    const selectedType = this.chordTypes.find((type) => type.name === this.selectedTypeName);
+
+    // Adding the root to the chord notes
+    this.chordNotes.push(selectedRoot);
+
+    selectedType.intervals.forEach((interval) => {
+      const note = this.notes.find((note) => note.value === selectedRoot.value + interval);
+      this.chordNotes.push(note);
+    });
+
+    console.log(this.chordNotes);
   }
 
 }

@@ -12,12 +12,12 @@
     </ion-card-header>
   
     <ion-card-content>
-      <ion-select [(ngModel)]="selectedRoot" (ionChange)="rootChanged()" okText="OK" cancelText="Annuler">
+      <ion-select [(ngModel)]="selectedRootName" (ionChange)="rootOrTypeChanged()" okText="OK" cancelText="Annuler">
         <ion-select-option *ngFor="let root of roots" value="{{root}}">{{ root }}</ion-select-option>
       </ion-select>
 
-      <ion-select [(ngModel)]="selectedType" okText="OK" cancelText="Annuler">
-        <ion-select-option *ngFor="let type of types" value="{{type}}">{{ type }}</ion-select-option>
+      <ion-select [(ngModel)]="selectedTypeName" (ionChange)="rootOrTypeChanged()" okText="OK" cancelText="Annuler">
+        <ion-select-option *ngFor="let chordName of chordNames" value="{{chordName}}">{{ chordName }}</ion-select-option>
       </ion-select>
 
       <ion-row>
