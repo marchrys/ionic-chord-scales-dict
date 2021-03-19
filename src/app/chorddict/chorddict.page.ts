@@ -115,6 +115,112 @@ export class ChorddictPage implements OnInit {
       value: 31,
       isRoot: false,
     },
+
+    {
+      name: 'C',
+      value: 32,
+      isRoot: true,
+    },
+    {
+      name: 'C#',
+      value: 34,
+      isRoot: true,
+    },
+    {
+      name: 'Db',
+      value: 35,
+      isRoot: true,
+    },
+    {
+      name: 'D',
+      value: 37,
+      isRoot: true,
+    },
+    {
+      name: 'D#',
+      value: 39,
+      isRoot: true,
+    },
+    {
+      name: 'Eb',
+      value: 40,
+      isRoot: true,
+    },
+    {
+      name: 'E',
+      value: 42,
+      isRoot: true,
+    },
+    {
+      name: 'Fb',
+      value: 43,
+      isRoot: false,
+    },
+    {
+      name: 'E#',
+      value: 44,
+      isRoot: false,
+    },
+    {
+      name: 'F',
+      value: 45,
+      isRoot: true,
+    },
+    {
+      name: 'F#',
+      value: 47,
+      isRoot: true,
+    },
+    {
+      name: 'Gb',
+      value: 48,
+      isRoot: true,
+    },
+    {
+      name: 'G',
+      value: 50,
+      isRoot: true,
+    },
+    {
+      name: 'G#',
+      value: 52,
+      isRoot: true,
+    },
+    {
+      name: 'Ab',
+      value: 53,
+      isRoot: true,
+    },
+    {
+      name: 'A',
+      value: 55,
+      isRoot: true,
+    },
+    {
+      name: 'A#',
+      value: 57,
+      isRoot: true,
+    },
+    {
+      name: 'Bb',
+      value: 58,
+      isRoot: true,
+    },
+    {
+      name: 'B',
+      value: 60,
+      isRoot: true,
+    },
+    {
+      name: 'Cb',
+      value: 61,
+      isRoot: false,
+    },
+    {
+      name: 'B#',
+      value: 62,
+      isRoot: false,
+    },
   ];
 
   chordTypes = [
@@ -145,6 +251,8 @@ export class ChorddictPage implements OnInit {
 
   selectedRootName: string;
   selectedTypeName: string;
+
+  chordnotesString: string;
 
   constructor() { }
 
@@ -180,7 +288,22 @@ export class ChorddictPage implements OnInit {
       this.chordNotes.push(note);
     });
 
-    console.log(this.chordNotes);
+    let undefinedNotes = false;
+    for(let i=0; i<this.chordNotes.length; i++){
+      if(this.chordNotes[i] === undefined){
+        undefinedNotes = true;
+        break;
+      }
+    }
+
+    this.chordnotesString = '';
+    if(undefinedNotes){
+      this.chordnotesString = 'Cet accord a des doubles atérations. Cette application n\'utilise pas de doubles altérations, dans un souci de simplicité.';
+    } else {
+      this.chordNotes.forEach((note) => {
+        this.chordnotesString += note.name + ' ';
+      });
+    }
   }
 
 }
