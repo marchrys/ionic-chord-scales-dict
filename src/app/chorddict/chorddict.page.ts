@@ -253,6 +253,7 @@ export class ChorddictPage implements OnInit {
   selectedTypeName: string;
 
   chordnotesString: string;
+  chordnotesColor = 'primary';
 
   constructor() { }
 
@@ -272,6 +273,10 @@ export class ChorddictPage implements OnInit {
   }
 
   rootOrTypeChanged(){
+    this.buildChordString();
+  }
+
+  buildChordString() {
     // Initializing the chord notes array
     this.chordNotes = [];
 
@@ -298,8 +303,10 @@ export class ChorddictPage implements OnInit {
 
     this.chordnotesString = '';
     if(undefinedNotes){
-      this.chordnotesString = 'Cet accord a des doubles atérations. Cette application n\'utilise pas de doubles altérations, dans un souci de simplicité.';
+      this.chordnotesColor = 'danger';
+      this.chordnotesString = 'Cet accord a des doubles atérations. Cependant, cette application n\'utilise pas de doubles altérations, dans un souci de simplicité.';
     } else {
+      this.chordnotesColor = 'primary';
       this.chordNotes.forEach((note) => {
         this.chordnotesString += note.name + ' ';
       });
