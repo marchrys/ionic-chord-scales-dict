@@ -223,7 +223,7 @@ export class ChorddictPage implements OnInit {
     },
   ];
 
-  chordTypes = [
+  elementTypes = [
     {
       name: '(majeur)',
       intervals: [10, 18]
@@ -242,73 +242,79 @@ export class ChorddictPage implements OnInit {
     },
   ];
 
-  // Array with the notes that can be chord roots
+  // Array with the notes that can be element roots
   roots = [];
-  chordNames = [];
+  elementNames = [];
 
-  // Array containing the notes of the selected chord
-  chordNotes = [];
+  // Array containing the notes of the selected element
+  elementNotes = [];
 
   selectedRootName: string;
   selectedTypeName: string;
 
-  chordnotesString: string;
-  chordnotesColor = 'primary';
+  elementnotesString: string;
+  elementnotesColor = 'primary';
 
   constructor() { }
 
   ngOnInit() {
+    // Creating the roots array from the notes
     this.notes.forEach((note) => {
       if(note.isRoot) {
         this.roots.push(note.name);
       }
     });
 
-    this.chordTypes.forEach((chordType) => {
-      this.chordNames.push(chordType.name);
+    // Creating the names array
+    this.elementTypes.forEach((elementType) => {
+      this.elementNames.push(elementType.name);
     });
 
+    // Initializing the variables
     this.selectedRootName = this.roots[0];
-    this.selectedTypeName = this.chordNames[0];
+    this.selectedTypeName = this.elementNames[0];
   }
 
   rootOrTypeChanged(){
-    this.buildChordString();
+    this.buildelementString();
   }
 
-  buildChordString() {
-    // Initializing the chord notes array
-    this.chordNotes = [];
+  buildelementString() {
+    // Initializing the element notes array
+    this.elementNotes = [];
 
-    // Selecting the root of the chord
+    // Selecting the root of the element
     const selectedRoot = this.notes.find((note) => note.name === this.selectedRootName);
-    // Selecting the type of the chord
-    const selectedType = this.chordTypes.find((type) => type.name === this.selectedTypeName);
+    // Selecting the type of the element
+    const selectedType = this.elementTypes.find((type) => type.name === this.selectedTypeName);
 
-    // Adding the root to the chord notes
-    this.chordNotes.push(selectedRoot);
+    // Adding the root to the element notes
+    this.elementNotes.push(selectedRoot);
 
+    // Adding the other element notes
     selectedType.intervals.forEach((interval) => {
       const note = this.notes.find((note) => note.value === selectedRoot.value + interval);
-      this.chordNotes.push(note);
+      this.elementNotes.push(note);
     });
 
+    // Checking if some notes are undefined
     let undefinedNotes = false;
-    for(let i=0; i<this.chordNotes.length; i++){
-      if(this.chordNotes[i] === undefined){
+    for(let i=0; i<this.elementNotes.length; i++){
+      if(this.elementNotes[i] === undefined){
         undefinedNotes = true;
         break;
       }
     }
 
-    this.chordnotesString = '';
+    // Building the element's notes string or the double acidentals' message
+    this.elementnotesString = '';
     if(undefinedNotes){
-      this.chordnotesColor = 'danger';
-      this.chordnotesString = 'Cet accord a des doubles atérations. Cependant, cette application n\'utilise pas de doubles altérations, dans un souci de simplicité.';
+      this.elementnotesColor = 'danger';
+      this.elementnotesString = 'Cet accord a des doubles atérations. Cependant, cette application n\'utilise pas de doubles altérations, dans un souci de simplicité.';
     } else {
-      this.chordnotesColor = 'primary';
-      this.chordNotes.forEach((note) => {
-        this.chordnotesString += note.name + ' ';
+      this.elementnotesColor = 'primary';
+      this.elementNotes.forEach((note) => {
+        this.elementnotesString += note.name + ' ';
       });
     }
   }

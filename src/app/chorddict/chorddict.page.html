@@ -17,12 +17,12 @@
       </ion-select>
 
       <ion-select [(ngModel)]="selectedTypeName" (ionChange)="rootOrTypeChanged()" okText="OK" cancelText="Annuler">
-        <ion-select-option *ngFor="let chordName of chordNames" value="{{chordName}}">{{ chordName }}</ion-select-option>
+        <ion-select-option *ngFor="let elementName of elementNames" value="{{elementName}}">{{ elementName }}</ion-select-option>
       </ion-select>
 
       <ion-row>
         <ion-col width="100" class="ion-text-center">
-          <ion-label color="{{ chordnotesColor }}">{{ chordnotesString }}</ion-label>
+          <ion-label color="{{ elementnotesColor }}">{{ elementnotesString }}</ion-label>
         </ion-col>
       </ion-row>
     </ion-card-content>
