@@ -12,213 +12,339 @@ export class ChorddictPage implements OnInit {
   // Array with all the notes
   notes = [
     {
-      name: 'C',
+      name: {
+        en: 'C',
+        fr: 'Do'
+      },
       value: 1,
       isRoot: true,
     },
     {
-      name: 'C#',
+      name: {
+        en: 'C#',
+        fr: 'Do#'
+      },
       value: 3,
       isRoot: true,
     },
     {
-      name: 'Db',
+      name: {
+        en: 'Db',
+        fr: 'Réb'
+      },
       value: 4,
       isRoot: true,
     },
     {
-      name: 'D',
+      name: {
+        en: 'D',
+        fr: 'Ré'
+      },
       value: 6,
       isRoot: true,
     },
     {
-      name: 'D#',
+      name: {
+        en: 'D#',
+        fr: 'Ré#'
+      },
       value: 8,
       isRoot: true,
     },
     {
-      name: 'Eb',
+      name: {
+        en: 'Eb',
+        fr: 'Mib'
+      },
       value: 9,
       isRoot: true,
     },
     {
-      name: 'E',
+      name: {
+        en: 'E',
+        fr: 'Mi'
+      },
       value: 11,
       isRoot: true,
     },
     {
-      name: 'Fb',
+      name: {
+        en: 'Fb',
+        fr: 'Fab'
+      },
       value: 12,
       isRoot: false,
     },
     {
-      name: 'E#',
+      name: {
+        en: 'E#',
+        fr: 'Mi#'
+      },
       value: 13,
       isRoot: false,
     },
     {
-      name: 'F',
+      name: {
+        en: 'F',
+        fr: 'Fa'
+      },
       value: 14,
       isRoot: true,
     },
     {
-      name: 'F#',
+      name: {
+        en: 'F#',
+        fr: 'Fa#'
+      },
       value: 16,
       isRoot: true,
     },
     {
-      name: 'Gb',
+      name: {
+        en: 'Gb',
+        fr: 'Solb'
+      },
       value: 17,
       isRoot: true,
     },
     {
-      name: 'G',
+      name: {
+        en: 'G',
+        fr: 'Sol'
+      },
       value: 19,
       isRoot: true,
     },
     {
-      name: 'G#',
+      name: {
+        en: 'G#',
+        fr: 'Sol#'
+      },
       value: 21,
       isRoot: true,
     },
     {
-      name: 'Ab',
+      name: {
+        en: 'Ab',
+        fr: 'Lab'
+      },
       value: 22,
       isRoot: true,
     },
     {
-      name: 'A',
+      name: {
+        en: 'A',
+        fr: 'La'
+      },
       value: 24,
       isRoot: true,
     },
     {
-      name: 'A#',
+      name: {
+        en: 'A#',
+        fr: 'La#'
+      },
       value: 26,
       isRoot: true,
     },
     {
-      name: 'Bb',
+      name: {
+        en: 'Bb',
+        fr: 'Sib'
+      },
       value: 27,
       isRoot: true,
     },
     {
-      name: 'B',
+      name: {
+        en: 'B',
+        fr: 'Si'
+      },
       value: 29,
       isRoot: true,
     },
     {
-      name: 'Cb',
+      name: {
+        en: 'Cb',
+        fr: 'Dob'
+      },
       value: 30,
       isRoot: false,
     },
     {
-      name: 'B#',
+      name: {
+        en: 'B#',
+        fr: 'Si#'
+      },
       value: 31,
       isRoot: false,
     },
 
     {
-      name: 'C',
+      name: {
+        en: 'C',
+        fr: 'Do'
+      },
       value: 32,
       isRoot: true,
     },
     {
-      name: 'C#',
+      name: {
+        en: 'C#',
+        fr: 'Do#'
+      },
       value: 34,
       isRoot: true,
     },
     {
-      name: 'Db',
+      name: {
+        en: 'Db',
+        fr: 'Réb'
+      },
       value: 35,
       isRoot: true,
     },
     {
-      name: 'D',
+      name: {
+        en: 'D',
+        fr: 'Ré'
+      },
       value: 37,
       isRoot: true,
     },
     {
-      name: 'D#',
+      name: {
+        en: 'D#',
+        fr: 'Ré#'
+      },
       value: 39,
       isRoot: true,
     },
     {
-      name: 'Eb',
+      name: {
+        en: 'Eb',
+        fr: 'Mib'
+      },
       value: 40,
       isRoot: true,
     },
     {
-      name: 'E',
+      name: {
+        en: 'E',
+        fr: 'Mi'
+      },
       value: 42,
       isRoot: true,
     },
     {
-      name: 'Fb',
+      name: {
+        en: 'Fb',
+        fr: 'Fab'
+      },
       value: 43,
       isRoot: false,
     },
     {
-      name: 'E#',
+      name: {
+        en: 'E#',
+        fr: 'Mi#'
+      },
       value: 44,
       isRoot: false,
     },
     {
-      name: 'F',
+      name: {
+        en: 'F',
+        fr: 'Fa'
+      },
       value: 45,
       isRoot: true,
     },
     {
-      name: 'F#',
+      name: {
+        en: 'F#',
+        fr: 'Fa#'
+      },
       value: 47,
       isRoot: true,
     },
     {
-      name: 'Gb',
+      name: {
+        en: 'Gb',
+        fr: 'Solb'
+      },
       value: 48,
       isRoot: true,
     },
     {
-      name: 'G',
+      name: {
+        en: 'G',
+        fr: 'Sol'
+      },
       value: 50,
       isRoot: true,
     },
     {
-      name: 'G#',
+      name: {
+        en: 'G#',
+        fr: 'Sol#'
+      },
       value: 52,
       isRoot: true,
     },
     {
-      name: 'Ab',
+      name: {
+        en: 'Ab',
+        fr: 'Lab'
+      },
       value: 53,
       isRoot: true,
     },
     {
-      name: 'A',
+      name: {
+        en: 'A',
+        fr: 'La'
+      },
       value: 55,
       isRoot: true,
     },
     {
-      name: 'A#',
+      name: {
+        en: 'A#',
+        fr: 'La#'
+      },
       value: 57,
       isRoot: true,
     },
     {
-      name: 'Bb',
+      name: {
+        en: 'Bb',
+        fr: 'Sib'
+      },
       value: 58,
       isRoot: true,
     },
     {
-      name: 'B',
+      name: {
+        en: 'B',
+        fr: 'Si'
+      },
       value: 60,
       isRoot: true,
     },
     {
-      name: 'Cb',
+      name: {
+        en: 'Cb',
+        fr: 'Dob'
+      },
       value: 61,
       isRoot: false,
     },
     {
-      name: 'B#',
+      name: {
+        en: 'B#',
+        fr: 'Si#'
+      },
       value: 62,
       isRoot: false,
     },
@@ -270,7 +396,7 @@ export class ChorddictPage implements OnInit {
     // Creating the roots array from the notes
     this.notes.forEach((note) => {
       if(note.isRoot) {
-        this.roots.push(note.name);
+        this.roots.push(note.name.en);
       }
     });
 
@@ -298,6 +424,9 @@ export class ChorddictPage implements OnInit {
     } else {
       this.selectedTypeName = this.elementNames[0];
     }
+
+    // Calling the buildElementString method to display the notes
+    this.buildElementString();
   }
 
   rootOrTypeChanged(){
@@ -309,7 +438,7 @@ export class ChorddictPage implements OnInit {
     this.elementNotes = [];
 
     // Selecting the root of the element
-    const selectedRoot = this.notes.find((note) => note.name === this.selectedRootName);
+    const selectedRoot = this.notes.find((note) => note.name.en === this.selectedRootName);
     // Selecting the type of the element
     const selectedType = this.elementTypes.find((type) => type.name === this.selectedTypeName);
 
@@ -339,11 +468,11 @@ export class ChorddictPage implements OnInit {
     } else {
       this.elementnotesColor = 'primary';
       this.elementNotes.forEach((note) => {
-        this.elementnotesString += note.name + ' ';
+        this.elementnotesString += note.name.fr + ' ';
       });
 
       // Saving the root and name of the chord
-      await this.storage.set(this.rootKey, selectedRoot.name);
+      await this.storage.set(this.rootKey, selectedRoot.name.en);
       await this.storage.set(this.typeKey, selectedType.name);
     }
   }
