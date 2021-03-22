@@ -256,9 +256,17 @@ export class ChorddictPage implements OnInit {
   elementnotesString: string;
   elementnotesColor = 'primary';
 
+  // Storage keys
+  rootKey = 'chordRootName';
+  typeKey = 'chordTypeName';
+
   constructor(private storage: Storage) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    // If using a custom driver:
+    // await this.storage.defineDriver(MyCustomDriver)
+    await this.storage.create();
+
     // Creating the roots array from the notes
     this.notes.forEach((note) => {
       if(note.isRoot) {
@@ -273,16 +281,30 @@ export class ChorddictPage implements OnInit {
     // Sorting the names array alphabetically in ascendant order
     this.elementNames.sort();
 
-    // Initializing the variables
-    this.selectedRootName = this.roots[0];
-    this.selectedTypeName = this.elementNames[0];
+    // Retrieving saved values from Storage
+    const storedRoot = await this.storage.get(this.rootKey);
+    const storedType = await this.storage.get(this.typeKey);
+
+    // If the retreived values are not null, we set the vars to this values
+    // Else, we set the vars to the element 0 of each array
+    if(storedRoot !== null) {
+      this.selectedRootName = storedRoot;
+    } else {
+      this.selectedRootName = this.roots[0];
+    }
+
+    if(storedType !== null) {
+      this.selectedTypeName = storedType;
+    } else {
+      this.selectedTypeName = this.elementNames[0];
+    }
   }
 
   rootOrTypeChanged(){
     this.buildElementString();
   }
 
-  buildElementString() {
+  async buildElementString() {
     // Initializing the element notes array
     this.elementNotes = [];
 
@@ -313,12 +335,16 @@ export class ChorddictPage implements OnInit {
     this.elementnotesString = '';
     if(undefinedNotes){
       this.elementnotesColor = 'danger';
-      this.elementnotesString = 'Cet accord a des doubles atérations. Cependant, cette application n\'utilise pas de doubles altérations, dans un souci de simplicité.';
+      this.elementnotesString = 'Cet accord a des doubles altérations. Cependant, cette application n\'utilise pas de doubles altérations, dans un souci de simplicité.';
     } else {
       this.elementnotesColor = 'primary';
       this.elementNotes.forEach((note) => {
         this.elementnotesString += note.name + ' ';
       });
+
+      // Saving the root and name of the chord
+      await this.storage.set(this.rootKey, selectedRoot.name);
+      await this.storage.set(this.typeKey, selectedType.name);
     }
   }
 
