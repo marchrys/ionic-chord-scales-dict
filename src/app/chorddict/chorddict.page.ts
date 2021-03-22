@@ -1,5 +1,6 @@
 import { findLast } from '@angular/compiler/src/directive_resolver';
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-chorddict',
@@ -255,7 +256,7 @@ export class ChorddictPage implements OnInit {
   elementnotesString: string;
   elementnotesColor = 'primary';
 
-  constructor() { }
+  constructor(private storage: Storage) { }
 
   ngOnInit() {
     // Creating the roots array from the notes
