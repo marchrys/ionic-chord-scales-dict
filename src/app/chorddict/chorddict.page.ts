@@ -269,6 +269,8 @@ export class ChorddictPage implements OnInit {
     this.elementTypes.forEach((elementType) => {
       this.elementNames.push(elementType.name);
     });
+    // Sorting the names array alphabetically in ascendant order
+    this.elementNames.sort();
 
     // Initializing the variables
     this.selectedRootName = this.roots[0];
@@ -276,10 +278,10 @@ export class ChorddictPage implements OnInit {
   }
 
   rootOrTypeChanged(){
-    this.buildelementString();
+    this.buildElementString();
   }
 
-  buildelementString() {
+  buildElementString() {
     // Initializing the element notes array
     this.elementNotes = [];
 
