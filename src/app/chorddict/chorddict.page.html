@@ -8,14 +8,16 @@
   <ion-card>
     <ion-card-header>
       <ion-card-subtitle></ion-card-subtitle>
-      <ion-card-title>Dictionnaire d'accords</ion-card-title>
+      <ion-card-title></ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
+      <ion-label>Fondamentale</ion-label>
       <ion-select [(ngModel)]="selectedRootName" (ionChange)="rootOrTypeChanged()" okText="OK" cancelText="Annuler">
         <ion-select-option *ngFor="let root of roots" value="{{root}}">{{ root }}</ion-select-option>
       </ion-select>
 
+      <ion-label>Type d'accord</ion-label>
       <ion-select [(ngModel)]="selectedTypeName" (ionChange)="rootOrTypeChanged()" okText="OK" cancelText="Annuler">
         <ion-select-option *ngFor="let elementName of elementNames" value="{{elementName}}">{{ elementName }}</ion-select-option>
       </ion-select>
