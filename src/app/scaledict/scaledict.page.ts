@@ -357,7 +357,70 @@ export class ScaledictPage implements OnInit {
         fr: 'majeure'
       },
       intervals: [5, 10, 13, 18, 23, 28],
-    }
+    },
+    {
+      name: {
+        en: 'harmonic minor',
+        fr: 'mineure harmonique'
+      },
+      intervals: [5, 8, 13, 18, 21, 28],
+    },
+    {
+      name: {
+        en: 'natural minor',
+        fr: 'mineure naturelle'
+      },
+      intervals: [5, 8, 13, 18, 21, 26],
+    },
+    {
+      name: {
+        en: 'ionian mode',
+        fr: 'mode ionien (de do)'
+      },
+      intervals: [5, 10, 13, 18, 23, 28],
+    },
+    {
+      name: {
+        en: 'dorian mode',
+        fr: 'mode dorien (de ré)'
+      },
+      intervals: [5, 8, 13, 18, 23, 26],
+    },
+    {
+      name: {
+        en: 'phrygian mode',
+        fr: 'mode phrygien (de mi)'
+      },
+      intervals: [3, 8, 13, 18, 21, 26],
+    },
+    {
+      name: {
+        en: 'lydian mode',
+        fr: 'mode lydien (de fa)'
+      },
+      intervals: [5, 10, 15, 18, 23, 28],
+    },
+    {
+      name: {
+        en: 'mixolydian mode',
+        fr: 'mode mixolydien (de sol)'
+      },
+      intervals: [5, 10, 13, 18, 23, 26],
+    },
+    {
+      name: {
+        en: 'aeolian mode',
+        fr: 'mode aéolien (de la)'
+      },
+      intervals: [5, 8, 13, 18, 21, 26],
+    },
+    {
+      name: {
+        en: 'locrian mode',
+        fr: 'mode locrien (de si)'
+      },
+      intervals: [3, 8, 13, 16, 21, 26],
+    },
   ];
 
   // Array with the notes that can be element roots
