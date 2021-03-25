@@ -1,9 +1,32 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Dictionnaire de gammes</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="tertiary">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-label>Tonique</ion-label>
+      <ion-select [(ngModel)]="selectedRootName" (ionChange)="rootOrTypeChanged()" okText="OK" cancelText="Annuler">
+        <ion-select-option *ngFor="let root of roots" value="{{root}}">{{ root }}</ion-select-option>
+      </ion-select>
 
+      <ion-label>Type de gamme</ion-label>
+      <ion-select [(ngModel)]="selectedTypeName" (ionChange)="rootOrTypeChanged()" okText="OK" cancelText="Annuler">
+        <ion-select-option *ngFor="let elementName of elementNames" value="{{elementName}}">{{ elementName }}</ion-select-option>
+      </ion-select>
+
+      <ion-row>
+        <ion-col id="element-notes" class="ion-text-center">
+          <ion-label color="{{ elementnotesColor }}">{{ elementnotesString }}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
