@@ -367,6 +367,54 @@ export class ChorddictPage implements OnInit {
       name: 'aug',
       intervals: [10, 20]
     },
+    {
+      name: '7',
+      intervals: [10, 18, 26]
+    },
+    {
+      name: 'M7',
+      intervals: [10, 18, 28]
+    },
+    {
+      name: 'm7',
+      intervals: [8, 18, 26]
+    },
+    {
+      name: 'm7(b5)',
+      intervals: [10, 16, 26]
+    },
+    {
+      name: 'dim7',
+      intervals: [8, 16, 24]
+    },
+    {
+      name: 'mM7',
+      intervals: [8, 18, 28]
+    },
+    {
+      name: 'augM7',
+      intervals: [10, 20, 28]
+    },
+    {
+      name: 'sus4',
+      intervals: [13, 18]
+    },
+    {
+      name: 'sus2',
+      intervals: [5, 18]
+    },
+    {
+      name: '7sus4',
+      intervals: [13, 18, 26]
+    },
+    {
+      name: '7sus2',
+      intervals: [5, 18, 26]
+    },
+    {
+      name: 'aug7',
+      intervals: [10, 20, 26]
+    },
   ];
 
   // Array with the notes that can be element roots
