@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>MyApp</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework.com" href="http://ionicframework.com/">Ionic Framework Team</author>
+<widget id="cma.chordscaledict" version="0.0.1" android-versionCode="1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Dictionnaire d'accords et de gammes</name>
+    <description>Une appli qui aide à trouver les notes d'un accord ou d'une gamme.</description>
+    <author email="mar.chrysikopoulos@gmail.com" href="">Marios Chrysikopoulos</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
