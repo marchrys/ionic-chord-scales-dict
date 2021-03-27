@@ -421,6 +421,27 @@ export class ScaledictPage implements OnInit {
       },
       intervals: [3, 8, 13, 16, 21, 26],
     },
+    {
+      name: {
+        en: 'blues pentatonic',
+        fr: 'pentatonique blues'
+      },
+      intervals: [8, 13, 16, 18, 26],
+    },
+    {
+      name: {
+        en: 'major pentatonic',
+        fr: 'pentatonique majeure'
+      },
+      intervals: [5, 10, 18, 23],
+    },
+    {
+      name: {
+        en: 'minor pentatonic',
+        fr: 'pentatonique mineure'
+      },
+      intervals: [8, 13, 18, 26],
+    },
   ];
 
   // Array with the notes that can be element roots
