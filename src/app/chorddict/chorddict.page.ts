@@ -1,6 +1,7 @@
 import { findLast } from '@angular/compiler/src/directive_resolver';
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { TranslateConfigService } from '../translate-config.service';
 
 import { TranslateConfigService } from '../translate-config.service';
 
@@ -11,7 +12,10 @@ import { TranslateConfigService } from '../translate-config.service';
 })
 export class ChorddictPage implements OnInit {
   selectedLanguage:string;
+<<<<<<< HEAD
 
+=======
+>>>>>>> ccaf21b14941715914500cfb76f95f258fdb9420
   // Array with all the notes
   notes = [
     {

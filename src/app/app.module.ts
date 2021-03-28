@@ -9,7 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { IonicStorageModule } from '@ionic/storage-angular';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ccaf21b14941715914500cfb76f95f258fdb9420
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -29,8 +32,12 @@ export function LanguageLoader(http: HttpClient) {
         useFactory: (LanguageLoader),
         deps: [HttpClient]
       }
+<<<<<<< HEAD
     })
   ],
+=======
+    })],
+>>>>>>> ccaf21b14941715914500cfb76f95f258fdb9420
   providers: [TranslateConfigService, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
