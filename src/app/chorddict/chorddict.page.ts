@@ -1,6 +1,7 @@
 import { findLast } from '@angular/compiler/src/directive_resolver';
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { TranslateConfigService } from '../translate-config.service';
 
 @Component({
   selector: 'app-chorddict',
@@ -8,7 +9,7 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['./chorddict.page.scss'],
 })
 export class ChorddictPage implements OnInit {
-
+  selectedLanguage:string;
   // Array with all the notes
   notes = [
     {
@@ -434,7 +435,9 @@ export class ChorddictPage implements OnInit {
   rootKey = 'chordRootName';
   typeKey = 'chordTypeName';
 
-  constructor(private storage: Storage) { }
+  constructor(private storage: Storage, private translateConfigService: TranslateConfigService) { 
+    this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
+  }
 
   async ngOnInit() {
     // If using a custom driver:

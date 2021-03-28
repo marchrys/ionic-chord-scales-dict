@@ -13,7 +13,7 @@ import { ChorddictPage } from './chorddict.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ChorddictPageRoutingModule
+    ChorddictPageRoutingModule,
   ],
   declarations: [ChorddictPage]
 })
