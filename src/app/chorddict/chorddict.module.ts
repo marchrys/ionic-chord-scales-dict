@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { ChorddictPageRoutingModule } from './chorddict-routing.module';
 
 import { ChorddictPage } from './chorddict.page';
@@ -13,7 +15,8 @@ import { ChorddictPage } from './chorddict.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ChorddictPageRoutingModule
+    ChorddictPageRoutingModule,
+    TranslateModule.forChild()
   ],
   declarations: [ChorddictPage]
 })
