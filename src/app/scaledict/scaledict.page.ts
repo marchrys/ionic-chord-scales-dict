@@ -471,7 +471,7 @@ export class ScaledictPage implements OnInit {
     // Creating the roots array from the notes
     this.notes.forEach((note) => {
       if(note.isRoot) {
-        this.roots.push(note.name.en);
+        this.roots.push(note.name.fr);
       }
     });
 
@@ -513,7 +513,7 @@ export class ScaledictPage implements OnInit {
     this.elementNotes = [];
 
     // Selecting the root of the element
-    const selectedRoot = this.notes.find((note) => note.name.en === this.selectedRootName);
+    const selectedRoot = this.notes.find((note) => note.name.fr === this.selectedRootName);
     // Selecting the type of the element
     const selectedType = this.elementTypes.find((type) => type.name.fr === this.selectedTypeName);
 
@@ -549,7 +549,7 @@ export class ScaledictPage implements OnInit {
       });
 
       // Saving the root and name of the chord
-      await this.storage.set(this.rootKey, selectedRoot.name.en);
+      await this.storage.set(this.rootKey, selectedRoot.name.fr);
       await this.storage.set(this.typeKey, selectedType.name.fr);
     }
   }
