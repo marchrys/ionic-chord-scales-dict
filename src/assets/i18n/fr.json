@@ -1,5 +1,12 @@
 {
     "chordDict": {
-        "title": "test dico dicoco"
+        "title": "Dictionnaire d'accords",
+        "root": "Fondamentale",
+        "type": "Type d'accord"
+    },
+    "scaleDict": {
+        "title": "Dictionnaire de gammes",
+        "root": "Tonique",
+        "type": "Type de gamme"
     }
 }

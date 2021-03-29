@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { ScaledictPageRoutingModule } from './scaledict-routing.module';
 
 import { ScaledictPage } from './scaledict.page';
@@ -13,7 +15,8 @@ import { ScaledictPage } from './scaledict.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ScaledictPageRoutingModule
+    ScaledictPageRoutingModule,
+    TranslateModule.forChild()
   ],
   declarations: [ScaledictPage]
 })

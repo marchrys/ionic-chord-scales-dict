@@ -12,12 +12,12 @@
     </ion-card-header>
   
     <ion-card-content>
-      <ion-label>Fondamentale</ion-label>
+      <ion-label>{{ 'chordDict.root' | translate:params }}</ion-label>
       <ion-select interface="popover" [(ngModel)]="selectedRootName" (ionChange)="rootOrTypeChanged()" okText="OK" cancelText="Annuler">
         <ion-select-option *ngFor="let root of roots" value="{{root}}">{{ root }}</ion-select-option>
       </ion-select>
 
-      <ion-label>Type d'accord</ion-label>
+      <ion-label>{{ 'chordDict.type' | translate:params }}</ion-label>
       <ion-select interface="popover" [(ngModel)]="selectedTypeName" (ionChange)="rootOrTypeChanged()" okText="OK" cancelText="Annuler">
         <ion-select-option *ngFor="let elementName of elementNames" value="{{elementName}}">{{ elementName }}</ion-select-option>
       </ion-select>

@@ -1,0 +1,12 @@
+{
+    "chordDict": {
+        "title": "Chord dictionary",
+        "root": "Root",
+        "type": "Chord type"
+    },
+    "scaleDict": {
+        "title": "Scale dictionary",
+        "root": "Tonic",
+        "type": "Scale type"
+    }
+}
