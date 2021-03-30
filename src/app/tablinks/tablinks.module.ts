@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { TablinksPageRoutingModule } from './tablinks-routing.module';
 
 import { TablinksPage } from './tablinks.page';
@@ -13,7 +15,8 @@ import { TablinksPage } from './tablinks.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    TablinksPageRoutingModule
+    TablinksPageRoutingModule,
+    TranslateModule.forChild()
   ],
   declarations: [TablinksPage]
 })

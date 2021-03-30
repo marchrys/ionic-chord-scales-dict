@@ -15,7 +15,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'C',
-        fr: 'Do'
+        fr: 'Do',
+        el: 'Ντο'
       },
       value: 1,
       isRoot: true,
@@ -23,7 +24,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'C#',
-        fr: 'Do#'
+        fr: 'Do#',
+        el: 'Ντο#'
       },
       value: 3,
       isRoot: true,
@@ -31,7 +33,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Db',
-        fr: 'Réb'
+        fr: 'Réb',
+        el: 'Ρεb'
       },
       value: 4,
       isRoot: true,
@@ -39,7 +42,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'D',
-        fr: 'Ré'
+        fr: 'Ré',
+        el: 'Ρε'
       },
       value: 6,
       isRoot: true,
@@ -47,7 +51,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'D#',
-        fr: 'Ré#'
+        fr: 'Ré#',
+        el: 'Ρε#'
       },
       value: 8,
       isRoot: true,
@@ -55,7 +60,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Eb',
-        fr: 'Mib'
+        fr: 'Mib',
+        el: 'Μιb'
       },
       value: 9,
       isRoot: true,
@@ -63,7 +69,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'E',
-        fr: 'Mi'
+        fr: 'Mi',
+        el: 'Μι'
       },
       value: 11,
       isRoot: true,
@@ -71,7 +78,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Fb',
-        fr: 'Fab'
+        fr: 'Fab',
+        el: 'Φαb'
       },
       value: 12,
       isRoot: false,
@@ -79,7 +87,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'E#',
-        fr: 'Mi#'
+        fr: 'Mi#',
+        el: 'Μι#'
       },
       value: 13,
       isRoot: false,
@@ -87,7 +96,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'F',
-        fr: 'Fa'
+        fr: 'Fa',
+        el: 'Φα'
       },
       value: 14,
       isRoot: true,
@@ -95,7 +105,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'F#',
-        fr: 'Fa#'
+        fr: 'Fa#',
+        el: 'Φα#'
       },
       value: 16,
       isRoot: true,
@@ -103,7 +114,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Gb',
-        fr: 'Solb'
+        fr: 'Solb',
+        el: 'Σολb'
       },
       value: 17,
       isRoot: true,
@@ -111,7 +123,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'G',
-        fr: 'Sol'
+        fr: 'Sol',
+        el: 'Σολ'
       },
       value: 19,
       isRoot: true,
@@ -119,7 +132,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'G#',
-        fr: 'Sol#'
+        fr: 'Sol#',
+        el: 'Σολ#'
       },
       value: 21,
       isRoot: true,
@@ -127,7 +141,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Ab',
-        fr: 'Lab'
+        fr: 'Lab',
+        el: 'Λαb'
       },
       value: 22,
       isRoot: true,
@@ -135,7 +150,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'A',
-        fr: 'La'
+        fr: 'La',
+        el: 'Λα'
       },
       value: 24,
       isRoot: true,
@@ -143,7 +159,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'A#',
-        fr: 'La#'
+        fr: 'La#',
+        el: 'Λα#'
       },
       value: 26,
       isRoot: true,
@@ -151,7 +168,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Bb',
-        fr: 'Sib'
+        fr: 'Sib',
+        el: 'Σιb'
       },
       value: 27,
       isRoot: true,
@@ -159,7 +177,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'B',
-        fr: 'Si'
+        fr: 'Si',
+        el: 'Σι'
       },
       value: 29,
       isRoot: true,
@@ -167,7 +186,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Cb',
-        fr: 'Dob'
+        fr: 'Dob',
+        el: 'Ντοb'
       },
       value: 30,
       isRoot: false,
@@ -175,7 +195,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'B#',
-        fr: 'Si#'
+        fr: 'Si#',
+        el: 'Σι#'
       },
       value: 31,
       isRoot: false,
@@ -184,7 +205,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'C',
-        fr: 'Do'
+        fr: 'Do',
+        el: 'Ντο'
       },
       value: 32,
       isRoot: true,
@@ -192,7 +214,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'C#',
-        fr: 'Do#'
+        fr: 'Do#',
+        el: 'Ντο#'
       },
       value: 34,
       isRoot: true,
@@ -200,7 +223,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Db',
-        fr: 'Réb'
+        fr: 'Réb',
+        el: 'Ρεb'
       },
       value: 35,
       isRoot: true,
@@ -208,7 +232,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'D',
-        fr: 'Ré'
+        fr: 'Ré',
+        el: 'Ρε'
       },
       value: 37,
       isRoot: true,
@@ -216,7 +241,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'D#',
-        fr: 'Ré#'
+        fr: 'Ré#',
+        el: 'Ρε#'
       },
       value: 39,
       isRoot: true,
@@ -224,7 +250,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Eb',
-        fr: 'Mib'
+        fr: 'Mib',
+        el: 'Μιb'
       },
       value: 40,
       isRoot: true,
@@ -232,7 +259,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'E',
-        fr: 'Mi'
+        fr: 'Mi',
+        el: 'Μι'
       },
       value: 42,
       isRoot: true,
@@ -240,7 +268,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Fb',
-        fr: 'Fab'
+        fr: 'Fab',
+        el: 'Φαb'
       },
       value: 43,
       isRoot: false,
@@ -248,7 +277,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'E#',
-        fr: 'Mi#'
+        fr: 'Mi#',
+        el: 'Μι#'
       },
       value: 44,
       isRoot: false,
@@ -256,7 +286,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'F',
-        fr: 'Fa'
+        fr: 'Fa',
+        el: 'Φα'
       },
       value: 45,
       isRoot: true,
@@ -264,7 +295,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'F#',
-        fr: 'Fa#'
+        fr: 'Fa#',
+        el: 'Φα#'
       },
       value: 47,
       isRoot: true,
@@ -272,7 +304,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Gb',
-        fr: 'Solb'
+        fr: 'Solb',
+        el: 'Σολb'
       },
       value: 48,
       isRoot: true,
@@ -280,7 +313,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'G',
-        fr: 'Sol'
+        fr: 'Sol',
+        el: 'Σολ'
       },
       value: 50,
       isRoot: true,
@@ -288,7 +322,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'G#',
-        fr: 'Sol#'
+        fr: 'Sol#',
+        el: 'Σολ#'
       },
       value: 52,
       isRoot: true,
@@ -296,7 +331,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Ab',
-        fr: 'Lab'
+        fr: 'Lab',
+        el: 'Λαb'
       },
       value: 53,
       isRoot: true,
@@ -304,7 +340,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'A',
-        fr: 'La'
+        fr: 'La',
+        el: 'Λα'
       },
       value: 55,
       isRoot: true,
@@ -312,7 +349,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'A#',
-        fr: 'La#'
+        fr: 'La#',
+        el: 'Λα#'
       },
       value: 57,
       isRoot: true,
@@ -320,7 +358,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Bb',
-        fr: 'Sib'
+        fr: 'Sib',
+        el: 'Σιb'
       },
       value: 58,
       isRoot: true,
@@ -328,7 +367,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'B',
-        fr: 'Si'
+        fr: 'Si',
+        el: 'Σι'
       },
       value: 60,
       isRoot: true,
@@ -336,7 +376,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'Cb',
-        fr: 'Dob'
+        fr: 'Dob',
+        el: 'Ντοb'
       },
       value: 61,
       isRoot: false,
@@ -344,7 +385,8 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'B#',
-        fr: 'Si#'
+        fr: 'Si#',
+        el: 'Σι#'
       },
       value: 62,
       isRoot: false,
@@ -355,91 +397,104 @@ export class ScaledictPage implements OnInit {
     {
       name: {
         en: 'major',
-        fr: 'majeure'
+        fr: 'majeure',
+        el: 'μείζονα'
       },
       intervals: [5, 10, 13, 18, 23, 28],
     },
     {
       name: {
         en: 'harmonic minor',
-        fr: 'mineure harmonique'
+        fr: 'mineure harmonique',
+        el: 'αρμονική ελάσσονα'
       },
       intervals: [5, 8, 13, 18, 21, 28],
     },
     {
       name: {
         en: 'natural minor',
-        fr: 'mineure naturelle'
+        fr: 'mineure naturelle',
+        el: 'φυσική ελάσσονα'
       },
       intervals: [5, 8, 13, 18, 21, 26],
     },
     {
       name: {
         en: 'ionian mode',
-        fr: 'mode ionien (de do)'
+        fr: 'mode ionien (de do)',
+        el: 'ιωνικός τρόπος'
       },
       intervals: [5, 10, 13, 18, 23, 28],
     },
     {
       name: {
         en: 'dorian mode',
-        fr: 'mode dorien (de ré)'
+        fr: 'mode dorien (de ré)',
+        el: 'δωρικός τρόπος'
       },
       intervals: [5, 8, 13, 18, 23, 26],
     },
     {
       name: {
         en: 'phrygian mode',
-        fr: 'mode phrygien (de mi)'
+        fr: 'mode phrygien (de mi)',
+        el: 'φρυγικός τρόπος'
       },
       intervals: [3, 8, 13, 18, 21, 26],
     },
     {
       name: {
         en: 'lydian mode',
-        fr: 'mode lydien (de fa)'
+        fr: 'mode lydien (de fa)',
+        el: 'λύδιος τρόπος'
       },
       intervals: [5, 10, 15, 18, 23, 28],
     },
     {
       name: {
         en: 'mixolydian mode',
-        fr: 'mode mixolydien (de sol)'
+        fr: 'mode mixolydien (de sol)',
+        el: 'μιξολύδιος τρόπος'
       },
       intervals: [5, 10, 13, 18, 23, 26],
     },
     {
       name: {
         en: 'aeolian mode',
-        fr: 'mode aéolien (de la)'
+        fr: 'mode aéolien (de la)',
+        el: 'αιόλιος τρόπος'
       },
       intervals: [5, 8, 13, 18, 21, 26],
     },
     {
       name: {
         en: 'locrian mode',
-        fr: 'mode locrien (de si)'
+        fr: 'mode locrien (de si)',
+        el: 'λόκριος τρόπος'
       },
       intervals: [3, 8, 13, 16, 21, 26],
     },
     {
       name: {
         en: 'blues pentatonic',
-        fr: 'pentatonique blues'
+        fr: 'pentatonique blues',
+        el: 'μπλουζ πεντατονική'
       },
       intervals: [8, 13, 16, 18, 26],
     },
     {
       name: {
         en: 'major pentatonic',
-        fr: 'pentatonique majeure'
+        fr: 'pentatonique majeure',
+        el: 'μείζονα πεντατονική'
       },
       intervals: [5, 10, 18, 23],
     },
     {
       name: {
         en: 'minor pentatonic',
-        fr: 'pentatonique mineure'
+        fr: 'pentatonique mineure',
+        el: 'ελάσσονα πεντατονική'
       },
       intervals: [8, 13, 18, 26],
     },

@@ -13,7 +13,7 @@ export class TranslateConfigService {
   getDefaultLanguage(){
     let language = this.translate.getBrowserLang();
 
-    if(['en', 'fr'].includes(language)){
+    if(['en', 'fr', 'el'].includes(language)){
       this.translate.setDefaultLang(language);
     }
     else {
