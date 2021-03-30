@@ -8,6 +8,7 @@
     "scaleDict": {
         "title": "Dictionnaire de gammes",
         "root": "Tonique",
-        "type": "Type de gamme"
+        "type": "Type de gamme",
+        "errorMsg": "Cette gamme a des doubles altérations. Cependant, cette application n'utilise pas de doubles altérations, dans un souci de simplicité."
     }
 }

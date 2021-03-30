@@ -3,11 +3,12 @@
         "title": "Chord dictionary",
         "root": "Root",
         "type": "Chord type",
-        "errorMsg": "This chord has des double accidentals. However, this application does not use double accidentals, for the sake of simplicity."
+        "errorMsg": "This chord has double accidentals. However, this application does not use double accidentals, for the sake of simplicity."
     },
     "scaleDict": {
         "title": "Scale dictionary",
         "root": "Tonic",
-        "type": "Scale type"
+        "type": "Scale type",
+        "errorMsg": "This scale has double accidentals. However, this application does not use double accidentals, for the sake of simplicity."
     }
 }

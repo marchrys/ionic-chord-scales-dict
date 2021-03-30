@@ -456,7 +456,7 @@ export class ScaledictPage implements OnInit {
   selectedTypeName: string;
 
   elementnotesString: string;
-  elementnotesColor = 'primary';
+  hasErrors = false;
 
   // Storage keys
   rootKey = 'scaleRootName';
@@ -474,13 +474,13 @@ export class ScaledictPage implements OnInit {
     // Creating the roots array from the notes
     this.notes.forEach((note) => {
       if(note.isRoot) {
-        this.roots.push(note.name.fr);
+        this.roots.push(note.name[this.selectedLanguage]);
       }
     });
 
     // Creating the names array
     this.elementTypes.forEach((elementType) => {
-      this.elementNames.push(elementType.name.fr);
+      this.elementNames.push(elementType.name[this.selectedLanguage]);
     });
     // Sorting the names array alphabetically in ascendant order
     this.elementNames.sort();
@@ -516,9 +516,9 @@ export class ScaledictPage implements OnInit {
     this.elementNotes = [];
 
     // Selecting the root of the element
-    const selectedRoot = this.notes.find((note) => note.name.fr === this.selectedRootName);
+    const selectedRoot = this.notes.find((note) => note.name[this.selectedLanguage] === this.selectedRootName);
     // Selecting the type of the element
-    const selectedType = this.elementTypes.find((type) => type.name.fr === this.selectedTypeName);
+    const selectedType = this.elementTypes.find((type) => type.name[this.selectedLanguage] === this.selectedTypeName);
 
     // Adding the root to the element notes
     this.elementNotes.push(selectedRoot);
@@ -543,17 +543,16 @@ export class ScaledictPage implements OnInit {
     // Building the element's notes string or the double acidentals' message
     this.elementnotesString = '';
     if(undefinedNotes){
-      this.elementnotesColor = 'danger';
-      this.elementnotesString = 'Cette gamme a des doubles altérations. Cependant, cette application n\'utilise pas de doubles altérations, dans un souci de simplicité.';
+      this.hasErrors = true;
     } else {
-      this.elementnotesColor = 'primary';
+      this.hasErrors = false;
       this.elementNotes.forEach((note) => {
-        this.elementnotesString += note.name.fr + ' ';
+        this.elementnotesString += note.name[this.selectedLanguage] + ' ';
       });
 
       // Saving the root and name of the chord
-      await this.storage.set(this.rootKey, selectedRoot.name.fr);
-      await this.storage.set(this.typeKey, selectedType.name.fr);
+      await this.storage.set(this.rootKey, selectedRoot.name[this.selectedLanguage]);
+      await this.storage.set(this.typeKey, selectedType.name[this.selectedLanguage]);
     }
   }
 

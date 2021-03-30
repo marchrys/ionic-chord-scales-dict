@@ -429,7 +429,8 @@ export class ChorddictPage implements OnInit {
   selectedTypeName: string;
 
   elementnotesString: string;
-  elementnotesColor = 'primary';
+
+  hasErrors = false;
 
   // Storage keys
   rootKey = 'chordRootName';
@@ -514,10 +515,9 @@ export class ChorddictPage implements OnInit {
     // Building the element's notes string or the double acidentals' message
     this.elementnotesString = '';
     if(undefinedNotes){
-      this.elementnotesColor = 'danger';
-      this.elementnotesString = 'Cet accord a des doubles altérations. Cependant, cette application n\'utilise pas de doubles altérations, dans un souci de simplicité.';
+      this.hasErrors = true;
     } else {
-      this.elementnotesColor = 'primary';
+      this.hasErrors = false;
       this.elementNotes.forEach((note) => {
         this.elementnotesString += note.name[this.selectedLanguage] + ' ';
       });

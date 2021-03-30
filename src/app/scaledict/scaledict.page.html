@@ -24,7 +24,8 @@
 
       <ion-row>
         <ion-col id="element-notes" class="ion-text-center">
-          <ion-label color="{{ elementnotesColor }}">{{ elementnotesString }}</ion-label>
+          <ion-label *ngIf="!hasErrors">{{ elementnotesString }}</ion-label>
+          <ion-label color="danger" *ngIf="hasErrors">{{ 'scaleDict.errorMsg' | translate:params }}</ion-label>
         </ion-col>
       </ion-row>
     </ion-card-content>
