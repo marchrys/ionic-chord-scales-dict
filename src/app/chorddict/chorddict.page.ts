@@ -519,7 +519,7 @@ export class ChorddictPage implements OnInit {
     } else {
       this.elementnotesColor = 'primary';
       this.elementNotes.forEach((note) => {
-        this.elementnotesString += note.name.fr + ' ';
+        this.elementnotesString += note.name[this.selectedLanguage] + ' ';
       });
 
       // Saving the root and name of the chord

@@ -2,7 +2,8 @@
     "chordDict": {
         "title": "Dictionnaire d'accords",
         "root": "Fondamentale",
-        "type": "Type d'accord"
+        "type": "Type d'accord",
+        "errorMsg": "Cet accord a des doubles altérations. Cependant, cette application n'utilise pas de doubles altérations, dans un souci de simplicité."
     },
     "scaleDict": {
         "title": "Dictionnaire de gammes",
