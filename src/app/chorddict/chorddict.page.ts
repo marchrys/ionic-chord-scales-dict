@@ -395,7 +395,11 @@ export class ChorddictPage implements OnInit {
 
   elementTypes = [
     {
-      name: '(majeur)',
+      name: {
+        en: '(major)',
+        fr: '(majeur)',
+        el: 'μείζονα'
+      },
       intervals: [10, 18]
     },
     {
@@ -497,7 +501,11 @@ export class ChorddictPage implements OnInit {
 
     // Creating the names array
     this.elementTypes.forEach((elementType) => {
-      this.elementNames.push(elementType.name);
+      if(typeof elementType.name === 'object') {
+        this.elementNames.push(elementType.name[this.selectedLanguage]);
+      } else {
+        this.elementNames.push(elementType.name);
+      }
     });
     // Sorting the names array alphabetically in ascendant order
     this.elementNames.sort();
