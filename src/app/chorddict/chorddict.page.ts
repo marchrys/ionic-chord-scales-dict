@@ -544,7 +544,6 @@ export class ChorddictPage implements OnInit {
 
   constructor(private storage: Storage, private translateConfigService: TranslateConfigService) { 
     this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
-    console.log(this.selectedLanguage);
   }
 
   async ngOnInit() {
@@ -598,7 +597,6 @@ export class ChorddictPage implements OnInit {
 
     // Selecting the root of the element
     const selectedRoot = this.notes.find((note) => note.name.en === this.selectedRootName);
-    console.log(this.selectedTypeName);
     // Selecting the type of the element
     const selectedType = this.elementTypes.find((type) => type.name[this.selectedLanguage] === this.selectedTypeName);
  
