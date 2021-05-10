@@ -203,7 +203,7 @@ export class DataService {
         el: 'Ντο'
       },
       value: 32,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -212,7 +212,7 @@ export class DataService {
         el: 'Ντο#'
       },
       value: 34,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -221,7 +221,7 @@ export class DataService {
         el: 'Ρεb'
       },
       value: 35,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -230,7 +230,7 @@ export class DataService {
         el: 'Ρε'
       },
       value: 37,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -239,7 +239,7 @@ export class DataService {
         el: 'Ρε#'
       },
       value: 39,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -248,7 +248,7 @@ export class DataService {
         el: 'Μιb'
       },
       value: 40,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -257,7 +257,7 @@ export class DataService {
         el: 'Μι'
       },
       value: 42,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -284,7 +284,7 @@ export class DataService {
         el: 'Φα'
       },
       value: 45,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -293,7 +293,7 @@ export class DataService {
         el: 'Φα#'
       },
       value: 47,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -302,7 +302,7 @@ export class DataService {
         el: 'Σολb'
       },
       value: 48,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -311,7 +311,7 @@ export class DataService {
         el: 'Σολ'
       },
       value: 50,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -320,7 +320,7 @@ export class DataService {
         el: 'Σολ#'
       },
       value: 52,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -329,7 +329,7 @@ export class DataService {
         el: 'Λαb'
       },
       value: 53,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -338,7 +338,7 @@ export class DataService {
         el: 'Λα'
       },
       value: 55,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -347,7 +347,7 @@ export class DataService {
         el: 'Λα#'
       },
       value: 57,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -356,7 +356,7 @@ export class DataService {
         el: 'Σιb'
       },
       value: 58,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {
@@ -365,7 +365,7 @@ export class DataService {
         el: 'Σι'
       },
       value: 60,
-      isRoot: true,
+      isRoot: false,
     },
     {
       name: {

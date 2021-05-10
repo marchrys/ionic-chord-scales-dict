@@ -2,6 +2,7 @@ import { findLast } from '@angular/compiler/src/directive_resolver';
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { TranslateConfigService } from '../translate-config.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-scaledict',
@@ -10,388 +11,6 @@ import { TranslateConfigService } from '../translate-config.service';
 })
 export class ScaledictPage implements OnInit {
   selectedLanguage:string;
-  // Array with all the notes
-  notes = [
-    {
-      name: {
-        en: 'C',
-        fr: 'Do',
-        el: 'Ντο'
-      },
-      value: 1,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'C#',
-        fr: 'Do#',
-        el: 'Ντο#'
-      },
-      value: 3,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Db',
-        fr: 'Réb',
-        el: 'Ρεb'
-      },
-      value: 4,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'D',
-        fr: 'Ré',
-        el: 'Ρε'
-      },
-      value: 6,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'D#',
-        fr: 'Ré#',
-        el: 'Ρε#'
-      },
-      value: 8,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Eb',
-        fr: 'Mib',
-        el: 'Μιb'
-      },
-      value: 9,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'E',
-        fr: 'Mi',
-        el: 'Μι'
-      },
-      value: 11,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Fb',
-        fr: 'Fab',
-        el: 'Φαb'
-      },
-      value: 12,
-      isRoot: false,
-    },
-    {
-      name: {
-        en: 'E#',
-        fr: 'Mi#',
-        el: 'Μι#'
-      },
-      value: 13,
-      isRoot: false,
-    },
-    {
-      name: {
-        en: 'F',
-        fr: 'Fa',
-        el: 'Φα'
-      },
-      value: 14,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'F#',
-        fr: 'Fa#',
-        el: 'Φα#'
-      },
-      value: 16,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Gb',
-        fr: 'Solb',
-        el: 'Σολb'
-      },
-      value: 17,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'G',
-        fr: 'Sol',
-        el: 'Σολ'
-      },
-      value: 19,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'G#',
-        fr: 'Sol#',
-        el: 'Σολ#'
-      },
-      value: 21,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Ab',
-        fr: 'Lab',
-        el: 'Λαb'
-      },
-      value: 22,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'A',
-        fr: 'La',
-        el: 'Λα'
-      },
-      value: 24,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'A#',
-        fr: 'La#',
-        el: 'Λα#'
-      },
-      value: 26,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Bb',
-        fr: 'Sib',
-        el: 'Σιb'
-      },
-      value: 27,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'B',
-        fr: 'Si',
-        el: 'Σι'
-      },
-      value: 29,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Cb',
-        fr: 'Dob',
-        el: 'Ντοb'
-      },
-      value: 30,
-      isRoot: false,
-    },
-    {
-      name: {
-        en: 'B#',
-        fr: 'Si#',
-        el: 'Σι#'
-      },
-      value: 31,
-      isRoot: false,
-    },
-
-    {
-      name: {
-        en: 'C',
-        fr: 'Do',
-        el: 'Ντο'
-      },
-      value: 32,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'C#',
-        fr: 'Do#',
-        el: 'Ντο#'
-      },
-      value: 34,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Db',
-        fr: 'Réb',
-        el: 'Ρεb'
-      },
-      value: 35,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'D',
-        fr: 'Ré',
-        el: 'Ρε'
-      },
-      value: 37,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'D#',
-        fr: 'Ré#',
-        el: 'Ρε#'
-      },
-      value: 39,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Eb',
-        fr: 'Mib',
-        el: 'Μιb'
-      },
-      value: 40,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'E',
-        fr: 'Mi',
-        el: 'Μι'
-      },
-      value: 42,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Fb',
-        fr: 'Fab',
-        el: 'Φαb'
-      },
-      value: 43,
-      isRoot: false,
-    },
-    {
-      name: {
-        en: 'E#',
-        fr: 'Mi#',
-        el: 'Μι#'
-      },
-      value: 44,
-      isRoot: false,
-    },
-    {
-      name: {
-        en: 'F',
-        fr: 'Fa',
-        el: 'Φα'
-      },
-      value: 45,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'F#',
-        fr: 'Fa#',
-        el: 'Φα#'
-      },
-      value: 47,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Gb',
-        fr: 'Solb',
-        el: 'Σολb'
-      },
-      value: 48,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'G',
-        fr: 'Sol',
-        el: 'Σολ'
-      },
-      value: 50,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'G#',
-        fr: 'Sol#',
-        el: 'Σολ#'
-      },
-      value: 52,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Ab',
-        fr: 'Lab',
-        el: 'Λαb'
-      },
-      value: 53,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'A',
-        fr: 'La',
-        el: 'Λα'
-      },
-      value: 55,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'A#',
-        fr: 'La#',
-        el: 'Λα#'
-      },
-      value: 57,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Bb',
-        fr: 'Sib',
-        el: 'Σιb'
-      },
-      value: 58,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'B',
-        fr: 'Si',
-        el: 'Σι'
-      },
-      value: 60,
-      isRoot: true,
-    },
-    {
-      name: {
-        en: 'Cb',
-        fr: 'Dob',
-        el: 'Ντοb'
-      },
-      value: 61,
-      isRoot: false,
-    },
-    {
-      name: {
-        en: 'B#',
-        fr: 'Si#',
-        el: 'Σι#'
-      },
-      value: 62,
-      isRoot: false,
-    },
-  ];
 
   elementTypes = [
     {
@@ -517,7 +136,10 @@ export class ScaledictPage implements OnInit {
   rootKey = 'scaleRootName';
   typeKey = 'scaleTypeName';
 
-  constructor(private storage: Storage, private translateConfigService: TranslateConfigService) { 
+  constructor(private storage: Storage, 
+              private translateConfigService: TranslateConfigService,
+              private dataService: DataService
+  ) { 
     this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
    }
 
@@ -527,7 +149,7 @@ export class ScaledictPage implements OnInit {
     await this.storage.create();
 
     // Creating the roots array from the notes
-    this.notes.forEach((note) => {
+    this.dataService.notes.forEach((note) => {
       if(note.isRoot) {
         this.roots.push(note.name[this.selectedLanguage]);
       }
@@ -571,7 +193,7 @@ export class ScaledictPage implements OnInit {
     this.elementNotes = [];
 
     // Selecting the root of the element
-    const selectedRoot = this.notes.find((note) => note.name[this.selectedLanguage] === this.selectedRootName);
+    const selectedRoot = this.dataService.notes.find((note) => note.name[this.selectedLanguage] === this.selectedRootName);
     // Selecting the type of the element
     const selectedType = this.elementTypes.find((type) => type.name[this.selectedLanguage] === this.selectedTypeName);
 
@@ -580,10 +202,10 @@ export class ScaledictPage implements OnInit {
 
     // Adding the other element notes
     selectedType.intervals.forEach((interval) => {
-      const note = this.notes.find((note) => note.value === selectedRoot.value + interval);
+      const note = this.dataService.notes.find((note) => note.value === selectedRoot.value + interval);
       this.elementNotes.push(note);
     });
-    const noteOctave = this.notes.find((note) => note.value === selectedRoot.value + 31);
+    const noteOctave = this.dataService.notes.find((note) => note.value === selectedRoot.value + 31);
     this.elementNotes.push(noteOctave);
 
     // Checking if some notes are undefined
