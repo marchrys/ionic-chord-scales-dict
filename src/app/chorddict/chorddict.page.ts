@@ -403,63 +403,123 @@ export class ChorddictPage implements OnInit {
       intervals: [10, 18]
     },
     {
-      name: 'm',
+      name: {
+        en: 'm',
+        fr: 'm',
+        el: 'm'
+      },
       intervals: [8, 18]
     },
     {
-      name: 'dim',
+      name: {
+        en: 'dim',
+        fr: 'dim',
+        el: 'dim'
+      },
       intervals: [8, 16]
     },
     {
-      name: 'aug',
+      name: {
+        en: 'aug',
+        fr: 'aug',
+        el: 'aug'
+      },
       intervals: [10, 20]
     },
     {
-      name: '7',
+      name: {
+        en: '7',
+        fr: '7',
+        el: '7'
+      },
       intervals: [10, 18, 26]
     },
     {
-      name: 'M7',
+      name: {
+        en: 'M7',
+        fr: 'M7',
+        el: 'M7'
+      },
       intervals: [10, 18, 28]
     },
     {
-      name: 'm7',
+      name: {
+        en: 'm7',
+        fr: 'm7',
+        el: 'm7'
+      },
       intervals: [8, 18, 26]
     },
     {
-      name: 'm7(b5)',
+      name: {
+        en: 'm7(b5)',
+        fr: 'm7(b5)',
+        el: 'm7(b5)'
+      },
       intervals: [10, 16, 26]
     },
     {
-      name: 'dim7',
+      name: {
+        en: 'dim7',
+        fr: 'dim7',
+        el: 'dim7'
+      },
       intervals: [8, 16, 24]
     },
     {
-      name: 'mM7',
+      name: {
+        en: 'mM7',
+        fr: 'mM7',
+        el: 'mM7'
+      },
       intervals: [8, 18, 28]
     },
     {
-      name: 'augM7',
+      name: {
+        en: 'augM7',
+        fr: 'augM7',
+        el: 'augM7'
+      },
       intervals: [10, 20, 28]
     },
     {
-      name: 'sus4',
+      name: {
+        en: 'sus4',
+        fr: 'sus4',
+        el: 'sus4'
+      },
       intervals: [13, 18]
     },
     {
-      name: 'sus2',
+      name: {
+        en: 'sus2',
+        fr: 'sus2',
+        el: 'sus2'
+      },
       intervals: [5, 18]
     },
     {
-      name: '7sus4',
+      name: {
+        en: '7sus4',
+        fr: '7sus4',
+        el: '7sus4'
+      },
       intervals: [13, 18, 26]
     },
     {
-      name: '7sus2',
+      name: {
+        en: '7sus2',
+        fr: '7sus2',
+        el: '7sus2'
+      },
       intervals: [5, 18, 26]
     },
     {
-      name: 'aug7',
+      name: {
+        en: 'aug7',
+        fr: 'aug7',
+        el: 'aug7'
+      },
       intervals: [10, 20, 26]
     },
   ];
@@ -501,11 +561,7 @@ export class ChorddictPage implements OnInit {
 
     // Creating the names array
     this.elementTypes.forEach((elementType) => {
-      if(typeof elementType.name === 'object') {
-        this.elementNames.push(elementType.name[this.selectedLanguage]);
-      } else {
-        this.elementNames.push(elementType.name);
-      }
+      this.elementNames.push(elementType.name[this.selectedLanguage]);
     });
     // Sorting the names array alphabetically in ascendant order
     this.elementNames.sort();
@@ -542,9 +598,10 @@ export class ChorddictPage implements OnInit {
 
     // Selecting the root of the element
     const selectedRoot = this.notes.find((note) => note.name.en === this.selectedRootName);
+    console.log(this.selectedTypeName);
     // Selecting the type of the element
-    const selectedType = this.elementTypes.find((type) => type.name === this.selectedTypeName);
-
+    const selectedType = this.elementTypes.find((type) => type.name[this.selectedLanguage] === this.selectedTypeName);
+ 
     // Adding the root to the element notes
     this.elementNotes.push(selectedRoot);
 
@@ -575,7 +632,7 @@ export class ChorddictPage implements OnInit {
 
       // Saving the root and name of the chord
       await this.storage.set(this.rootKey, selectedRoot.name.en);
-      await this.storage.set(this.typeKey, selectedType.name);
+      await this.storage.set(this.typeKey, selectedType.name[this.selectedLanguage]);
     }
   }
 
