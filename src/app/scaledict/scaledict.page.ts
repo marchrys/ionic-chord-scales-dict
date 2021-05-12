@@ -151,13 +151,13 @@ export class ScaledictPage implements OnInit {
     // Creating the roots array from the notes
     this.dataService.notes.forEach((note) => {
       if(note.isRoot) {
-        this.roots.push(note.name[this.selectedLanguage]);
+        this.roots.push(note);
       }
     });
 
     // Creating the names array
     this.elementTypes.forEach((elementType) => {
-      this.elementNames.push(elementType.name[this.selectedLanguage]);
+      this.elementNames.push(elementType);
     });
     // Sorting the names array alphabetically in ascendant order
     this.elementNames.sort();
@@ -169,15 +169,15 @@ export class ScaledictPage implements OnInit {
     // If the retreived values are not null, we set the vars to this values
     // Else, we set the vars to the element 0 of each array
     if(storedRoot !== null) {
-      this.selectedRootName = storedRoot;
+      this.selectedRootName = storedRoot.name[this.selectedLanguage];
     } else {
-      this.selectedRootName = this.roots[0];
+      this.selectedRootName = this.roots[0].name[this.selectedLanguage];
     }
 
     if(storedType !== null) {
-      this.selectedTypeName = storedType;
+      this.selectedTypeName = storedType.name[this.selectedLanguage];
     } else {
-      this.selectedTypeName = this.elementNames[0];
+      this.selectedTypeName = this.elementNames[0].name[this.selectedLanguage];
     }
 
     // Calling the buildElementString method to display the notes
@@ -228,8 +228,8 @@ export class ScaledictPage implements OnInit {
       });
 
       // Saving the root and name of the chord
-      await this.storage.set(this.rootKey, selectedRoot.name[this.selectedLanguage]);
-      await this.storage.set(this.typeKey, selectedType.name[this.selectedLanguage]);
+      await this.storage.set(this.rootKey, selectedRoot);
+      await this.storage.set(this.typeKey, selectedType);
     }
   }
 

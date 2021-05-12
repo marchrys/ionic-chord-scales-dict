@@ -75,7 +75,7 @@ export class ChorddictPage implements OnInit {
         fr: 'm7(b5)',
         el: 'm7(b5)'
       },
-      intervals: [10, 16, 26]
+      intervals: [8, 16, 26]
     },
     {
       name: {
@@ -176,13 +176,13 @@ export class ChorddictPage implements OnInit {
     // Creating the roots array from the notes
     this.dataService.notes.forEach((note) => {
       if(note.isRoot) {
-        this.roots.push(note.name.en);
+        this.roots.push(note);
       }
     });
 
     // Creating the names array
     this.elementTypes.forEach((elementType) => {
-      this.elementNames.push(elementType.name[this.selectedLanguage]);
+      this.elementNames.push(elementType);
     });
     // Sorting the names array alphabetically in ascendant order
     this.elementNames.sort();
@@ -194,15 +194,15 @@ export class ChorddictPage implements OnInit {
     // If the retreived values are not null, we set the vars to this values
     // Else, we set the vars to the element 0 of each array
     if(storedRoot !== null) {
-      this.selectedRootName = storedRoot;
+      this.selectedRootName = storedRoot.name[this.selectedLanguage];
     } else {
-      this.selectedRootName = this.roots[0];
+      this.selectedRootName = this.roots[0].name[this.selectedLanguage];
     }
 
     if(storedType !== null) {
-      this.selectedTypeName = storedType;
+      this.selectedTypeName = storedType.name[this.selectedLanguage];
     } else {
-      this.selectedTypeName = this.elementNames[0];
+      this.selectedTypeName = this.elementNames[0].name[this.selectedLanguage];
     }
 
     // Calling the buildElementString method to display the notes
@@ -218,7 +218,7 @@ export class ChorddictPage implements OnInit {
     this.elementNotes = [];
 
     // Selecting the root of the element
-    const selectedRoot = this.dataService.notes.find((note) => note.name.en === this.selectedRootName);
+    const selectedRoot = this.dataService.notes.find((note) => note.name[this.selectedLanguage] === this.selectedRootName);
     // Selecting the type of the element
     const selectedType = this.elementTypes.find((type) => type.name[this.selectedLanguage] === this.selectedTypeName);
  
@@ -251,8 +251,8 @@ export class ChorddictPage implements OnInit {
       });
 
       // Saving the root and name of the chord
-      await this.storage.set(this.rootKey, selectedRoot.name.en);
-      await this.storage.set(this.typeKey, selectedType.name[this.selectedLanguage]);
+      await this.storage.set(this.rootKey, selectedRoot);
+      await this.storage.set(this.typeKey, selectedType);
     }
   }
 
