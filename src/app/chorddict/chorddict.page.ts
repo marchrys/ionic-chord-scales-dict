@@ -143,6 +143,30 @@ export class ChorddictPage implements OnInit {
     },
   ];
 
+  notesDescriptions = [
+    {
+      name: {
+        en: 'Root',
+        fr: 'Fondamentale',
+        el: 'Θεμέλιος'
+      }
+    },
+    {
+      name: {
+        en: 'Third',
+        fr: 'Tierce',
+        el: 'Τρίτη'
+      }
+    },
+    {
+      name: {
+        en: 'Fifth',
+        fr: 'Quinte',
+        el: 'Πέμπτη'
+      }
+    },
+  ]
+
   // Array with the notes that can be element roots
   roots = [];
   elementNames = [];
